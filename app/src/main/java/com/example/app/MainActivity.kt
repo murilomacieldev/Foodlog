@@ -24,15 +24,8 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-
-
-
-
 val LaranjaFoodLog = Color(0xFFF4511E)
 val FundoFoodLog = Color(0xFFF7F7F7)
-
-
-
 
 class MainActivity : ComponentActivity() {
 
@@ -54,29 +47,19 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun TelaHome() {
-
     val context = LocalContext.current
-
-
     Scaffold(
-
         bottomBar = {
             BarraVisual()
         }
-
     ) { paddingValues ->
-
         Column(
             modifier = Modifier
                 .fillMaxSize()
                 .background(FundoFoodLog)
-
-
                 .padding(paddingValues)
                 .padding(20.dp)
         ) {
-
-
             Row(
                 modifier = Modifier.fillMaxWidth(),
 
@@ -93,32 +76,25 @@ fun TelaHome() {
                     fontWeight = FontWeight.Bold,
                     color = LaranjaFoodLog
                 )
-
                 Text(
                     text = "⌕",
                     fontSize = 26.sp
                 )
             }
-
             Spacer(
                 modifier = Modifier.height(20.dp)
             )
-
-
             Row(
                 horizontalArrangement = Arrangement.spacedBy(8.dp)
             ) {
-
                 FiltroHome(
                     texto = "Tudo",
                     ativo = true
                 )
-
                 FiltroHome(
                     texto = "Hambúrguer",
                     ativo = false
                 )
-
                 FiltroHome(
                     texto = "Japonês",
                     ativo = false
@@ -128,8 +104,6 @@ fun TelaHome() {
             Spacer(
                 modifier = Modifier.height(20.dp)
             )
-
-
             Card(
                 modifier = Modifier.fillMaxWidth(),
                 shape = RoundedCornerShape(16.dp),
@@ -152,11 +126,9 @@ fun TelaHome() {
                                 .background(Color.LightGray)
                         )
 
-
                         Spacer(
                             modifier = Modifier.width(10.dp)
                         )
-
                         Column {
 
                             Text(
@@ -257,9 +229,7 @@ fun TelaHome() {
                 modifier = Modifier.height(16.dp)
             )
 
-
             Button(
-
 
                 onClick = {
 
@@ -285,7 +255,6 @@ fun TelaHome() {
         }
     }
 }
-
 
 
 
