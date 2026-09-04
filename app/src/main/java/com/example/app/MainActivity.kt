@@ -46,13 +46,11 @@ class MainActivity : ComponentActivity() {
 
                 //TelaHome()
                 TelaBusca()
-                // TelaNovoLog()
+                TelaNovoLog()
             }
         }
     }
 }
-
-
 
 @Composable
 fun TelaHome() {
@@ -62,25 +60,21 @@ fun TelaHome() {
 
     Scaffold(
 
-
         bottomBar = {
             BarraVisual()
         }
 
     ) { paddingValues ->
 
-
         Column(
             modifier = Modifier
                 .fillMaxSize()
                 .background(FundoFoodLog)
 
-                // ✅ REQUISITO: padding
+
                 .padding(paddingValues)
                 .padding(20.dp)
         ) {
-
-
 
 
             Row(
@@ -92,7 +86,6 @@ fun TelaHome() {
 
                 verticalAlignment = Alignment.CenterVertically
             ) {
-
 
                 Text(
                     text = "FoodLog",
@@ -107,12 +100,9 @@ fun TelaHome() {
                 )
             }
 
-
             Spacer(
                 modifier = Modifier.height(20.dp)
             )
-
-
 
 
             Row(
@@ -135,12 +125,9 @@ fun TelaHome() {
                 )
             }
 
-
             Spacer(
                 modifier = Modifier.height(20.dp)
             )
-
-
 
 
             Card(
@@ -150,16 +137,13 @@ fun TelaHome() {
                     containerColor = Color.White
                 )
             ) {
-
                 Column(
                     modifier = Modifier.padding(16.dp)
                 ) {
 
-
                     Row(
                         verticalAlignment = Alignment.CenterVertically
                     ) {
-
 
                         Box(
                             modifier = Modifier
@@ -172,7 +156,6 @@ fun TelaHome() {
                         Spacer(
                             modifier = Modifier.width(10.dp)
                         )
-
 
                         Column {
 
@@ -190,12 +173,9 @@ fun TelaHome() {
                         }
                     }
 
-
                     Spacer(
                         modifier = Modifier.height(15.dp)
                     )
-
-
 
                     Box(
                         modifier = Modifier
@@ -214,11 +194,9 @@ fun TelaHome() {
                         )
                     }
 
-
                     Spacer(
                         modifier = Modifier.height(15.dp)
                     )
-
 
                     Text(
                         text = "Carbonara Tradicional",
@@ -226,18 +204,15 @@ fun TelaHome() {
                         fontWeight = FontWeight.Bold
                     )
 
-
                     Text(
                         text = "Cantina da Nonna",
                         fontSize = 14.sp,
                         color = LaranjaFoodLog
                     )
 
-
                     Spacer(
                         modifier = Modifier.height(12.dp)
                     )
-
 
                     Row(
                         modifier = Modifier.fillMaxWidth(),
@@ -248,23 +223,19 @@ fun TelaHome() {
                             text = "★ 4.8",
                             fontWeight = FontWeight.Bold
                         )
-
                         Text(
                             text = "R$ 42,00",
                             fontWeight = FontWeight.Bold
                         )
                     }
 
-
                     Spacer(
                         modifier = Modifier.height(15.dp)
                     )
 
-
                     Text(
                         text = "Muito saboroso e otimo preçc. Voltarei novamente!"
                     )
-
 
                     Spacer(
                         modifier = Modifier.height(15.dp)
@@ -282,19 +253,15 @@ fun TelaHome() {
                 }
             }
 
-
             Spacer(
                 modifier = Modifier.height(16.dp)
             )
-
-
 
 
             Button(
 
 
                 onClick = {
-
 
                     Toast.makeText(
                         context,
@@ -328,7 +295,6 @@ fun FiltroHome(
     ativo: Boolean
 ) {
 
-
     Surface(
         shape = RoundedCornerShape(10.dp),
 
@@ -338,7 +304,6 @@ fun FiltroHome(
             Color(0xFFEAEAEA)
         }
     ) {
-
         Text(
             text = texto,
 
@@ -359,8 +324,6 @@ fun FiltroHome(
 }
 
 
-
-
 @Composable
 fun TelaBusca() {
 
@@ -368,15 +331,11 @@ fun TelaBusca() {
 
 
 
-
-    var pesquisa by remember {
-        mutableStateOf("")
+    var pesquisa by remember { mutableStateOf("")
     }
 
 
-
     Scaffold(
-
         bottomBar = {
             BarraVisual()
         }
@@ -391,31 +350,24 @@ fun TelaBusca() {
                 .padding(20.dp)
         ) {
 
-
             Text(
                 text = "Buscar",
                 fontSize = 26.sp,
                 fontWeight = FontWeight.Bold
             )
 
-
             Spacer(
                 modifier = Modifier.height(16.dp)
             )
 
 
-
             OutlinedTextField(
-
 
                 value = pesquisa,
 
-
                 onValueChange = {
-
                     pesquisa = it
                 },
-
                 modifier = Modifier.fillMaxWidth(),
 
                 label = {
@@ -675,28 +627,23 @@ fun TelaNovoLog() {
 
 
 
-    // ✅ remember + mutableStateOf
+
 
     var nomePrato by remember {
         mutableStateOf("")
     }
-
     var restaurante by remember {
         mutableStateOf("")
     }
-
     var preco by remember {
         mutableStateOf("")
     }
-
     var comentario by remember {
         mutableStateOf("")
     }
-
     var nota by remember {
         mutableStateOf(0)
     }
-
 
     Scaffold(
 
@@ -706,13 +653,12 @@ fun TelaNovoLog() {
 
     ) { paddingValues ->
 
-
         Column(
             modifier = Modifier
                 .fillMaxSize()
                 .background(FundoFoodLog)
 
-                // Permite rolar a tela
+
                 .verticalScroll(
                     rememberScrollState()
                 )
@@ -721,13 +667,11 @@ fun TelaNovoLog() {
                 .padding(20.dp)
         ) {
 
-
             Text(
                 text = "Novo Log",
                 fontSize = 26.sp,
                 fontWeight = FontWeight.Bold
             )
-
 
             Text(
                 text = "Registre uma nova experiência gastronômica",
@@ -735,13 +679,9 @@ fun TelaNovoLog() {
                 color = Color.Gray
             )
 
-
             Spacer(
                 modifier = Modifier.height(20.dp)
             )
-
-
-
 
             Box(
                 modifier = Modifier
@@ -773,7 +713,7 @@ fun TelaNovoLog() {
 
                 value = nomePrato,
 
-                // ✅ Lambda
+
                 onValueChange = {
                     nomePrato = it
                 },
@@ -836,19 +776,16 @@ fun TelaNovoLog() {
 
                 nota = nota,
 
-                // ✅ Lambda criada por nós
+
                 onNotaChange = {
 
                     nota = it
                 }
             )
 
-
             Spacer(
                 modifier = Modifier.height(10.dp)
             )
-
-
 
 
             OutlinedTextField(
@@ -876,11 +813,9 @@ fun TelaNovoLog() {
                 singleLine = true
             )
 
-
             Spacer(
                 modifier = Modifier.height(10.dp)
             )
-
 
 
 
@@ -901,20 +836,15 @@ fun TelaNovoLog() {
                 }
             )
 
-
             Spacer(
                 modifier = Modifier.height(20.dp)
             )
 
 
 
-
-
             Button(
 
-
                 onClick = {
-
 
                     Toast.makeText(
                         context,
@@ -940,15 +870,12 @@ fun TelaNovoLog() {
                 )
             }
 
-
             Spacer(
                 modifier = Modifier.height(20.dp)
             )
         }
     }
 }
-
-
 
 
 @Composable
@@ -971,11 +898,9 @@ fun AvaliacaoEstrelas(
                 } else {
                     "☆"
                 },
-
                 color = LaranjaFoodLog,
 
                 fontSize = 34.sp,
-
 
                 modifier = Modifier.clickable {
 
@@ -985,7 +910,6 @@ fun AvaliacaoEstrelas(
         }
     }
 }
-
 
 
 
@@ -1009,7 +933,6 @@ fun BarraVisual() {
             verticalAlignment = Alignment.CenterVertically
         ) {
 
-
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
@@ -1021,7 +944,6 @@ fun BarraVisual() {
                     fontSize = 11.sp
                 )
             }
-
 
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally
@@ -1035,7 +957,6 @@ fun BarraVisual() {
                 )
             }
 
-
             Box(
                 modifier = Modifier
                     .size(42.dp)
@@ -1044,7 +965,6 @@ fun BarraVisual() {
 
                 contentAlignment = Alignment.Center
             ) {
-
                 Text(
                     text = "+",
                     color = Color.White,
@@ -1052,11 +972,9 @@ fun BarraVisual() {
                 )
             }
 
-
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-
                 Text("○")
 
                 Text(
